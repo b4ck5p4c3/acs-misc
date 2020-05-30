@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Powering off the red door solenoid each second to make sure that we
+# wouldn't damage the lock itself
+while true; do
+
+  ./mqtt-send -t modbus/endpointpp/set/red_door_lock -m False
+  sleep 1
+
+done

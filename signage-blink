@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Turning El-Wire signage on/off each 400ms
+while true; do
+
+  ./mqtt-send -t 'modbus/endpointpp/set/aquarium_signage' -m 'True'
+  sleep 0.4
+
+  ./mqtt-send -t 'modbus/endpointpp/set/aquarium_signage' -m 'False'
+  sleep 0.4
+
+done
